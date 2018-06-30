@@ -246,7 +246,6 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 
 	.state("coluna_vh.dashboard", {
 		url: "/dashboard",
-		cache:false,
 		views: {
 			"coluna_vh-side_menus" : {
 						templateUrl:"templates/coluna_vh-dashboard.html",

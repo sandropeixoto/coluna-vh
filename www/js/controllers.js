@@ -37,13 +37,13 @@ angular.module("coluna_vh.controllers", [])
 	// TODO: indexCtrl --|-- $rootScope.showLanguageDialog
 	var modal_language = "";
 	modal_language += "<ion-modal-view>";
-	modal_language += "<ion-header-bar class=\"bar bar-header bar-light\">";
+	modal_language += "<ion-header-bar class=\"bar bar-header bar-dark\">";
 	modal_language += "<h1 class=\"title\">{{ 'Language' | translate }}</h1>";
 	modal_language += "</ion-header-bar>";
 	modal_language += "<ion-content class=\"padding\">";
 	modal_language += "<div class=\"list\">";
 	modal_language += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"language_option\" ng-value=\"'pt-br'\" ng-click=\"tryChangeLanguage('pt-br')\">Portuguese - Brazil</ion-radio>";
-	modal_language += "<button class=\"button button-full button-light\" ng-click=\"closeLanguageDialog()\">{{ 'Close' | translate }}</button>";
+	modal_language += "<button class=\"button button-full button-dark\" ng-click=\"closeLanguageDialog()\">{{ 'Close' | translate }}</button>";
 	modal_language += "</div>";
 	modal_language += "</ion-content>";
 	modal_language += "</ion-modal-view>";
@@ -103,7 +103,7 @@ angular.module("coluna_vh.controllers", [])
 	// TODO: indexCtrl --|-- $rootScope.showFontSizeDialog
 	var modal_fontsize = "";
 	modal_fontsize += "<ion-modal-view>";
-	modal_fontsize += "<ion-header-bar class=\"bar bar-header bar-light\">";
+	modal_fontsize += "<ion-header-bar class=\"bar bar-header bar-dark\">";
 	modal_fontsize += "<h1 class=\"title\">{{ 'Font Size' | translate }}</h1>";
 	modal_fontsize += "</ion-header-bar>";
 	modal_fontsize += "<ion-content class=\"padding\">";
@@ -111,7 +111,7 @@ angular.module("coluna_vh.controllers", [])
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'small'\" ng-click=\"tryChangeFontSize('small');\">{{ 'Small' | translate }}</ion-radio>";
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'normal'\" ng-click=\"tryChangeFontSize('normal');\">{{ 'Normal' | translate }}</ion-radio>";
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'large'\" ng-click=\"tryChangeFontSize('large');\">{{ 'Large' | translate }}</ion-radio>";
-	modal_fontsize += "<button class=\"button button-full button-light\" ng-click=\"closeFontSizeDialog()\">{{ 'Close' | translate }}</button>";
+	modal_fontsize += "<button class=\"button button-full button-dark\" ng-click=\"closeFontSizeDialog()\">{{ 'Close' | translate }}</button>";
 	modal_fontsize += "</div>";
 	modal_fontsize += "</ion-content>";
 	modal_fontsize += "</ion-modal-view>";
@@ -361,11 +361,23 @@ angular.module("coluna_vh.controllers", [])
 	popover_template += "	</ion-header-bar>";
 	popover_template += "	<ion-content>";
 	popover_template += "		<ion-list>";
+	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"showLanguageDialog()\" >";
+	popover_template += "			{{ '' | translate }}";
+	popover_template += "			</a>";
+	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"showFontSizeDialog()\" >";
+	popover_template += "			{{ '' | translate }}";
+	popover_template += "			</a>";
 	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"openWebView('http://www.colunadovh.com.br/wp-admin/')\">";
 	popover_template += "			{{ 'Administrator' | translate }}";
 	popover_template += "			</a>";
+	popover_template += "			<a  class=\"item dark-ink\" ng-href=\"#/coluna_vh/faqs\" ng-click=\"popover.hide()\">";
+	popover_template += "			{{ 'FAQs' | translate }}";
+	popover_template += "			</a>";
 	popover_template += "			<a  class=\"item dark-ink\" ng-href=\"#/coluna_vh/about_us\" ng-click=\"popover.hide()\">";
 	popover_template += "			{{ 'Sobre' | translate }}";
+	popover_template += "			</a>";
+	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"clearCacheApp()\" >";
+	popover_template += "			{{ '' | translate }}";
 	popover_template += "			</a>";
 	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"exitApp()\">";
 	popover_template += "			{{ 'Sair' | translate }}";
@@ -419,7 +431,7 @@ angular.module("coluna_vh.controllers", [])
 	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
 	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
 	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
-	$rootScope.last_edit = "page_builder" ;
+	$rootScope.last_edit = "menu" ;
 	$scope.$on("$ionicView.afterEnter", function (){
 		var page_id = $state.current.name ;
 		$rootScope.page_id = page_id.replace(".","-") ;
@@ -467,7 +479,7 @@ angular.module("coluna_vh.controllers", [])
 	function controller_by_user(){
 		try {
 			
-			
+$ionicConfig.backButton.text("");			
 		} catch(e){
 			console.log("%cerror: %cPage: `about_us` and field: `Custom Controller`","color:blue;font-size:18px","color:red;font-size:18px");
 			console.dir(e);
