@@ -97,7 +97,7 @@ h4 small, .h4 small { font-size:14px}
 .item-options .icon:before {background: transparent;}
 .item-radio input:checked + .radio-content .item-content {background:transparent ;}
 .item-radio .radio-icon {color:#387EF5}
-.bar-header-inset,.bar-header-inset input{background:#eee;margin-top:2px;}
+.bar-header-inset,.bar-header-inset input{background:#000;margin-top:2px;}
 /** Template for Data Listing **/
 .item-thumbnail-3 {overflow: hidden;}
 .item-thumbnail-3 .item{border:0;height: 80px !important;min-height: 80px !important;}
