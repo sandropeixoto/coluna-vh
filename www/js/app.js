@@ -2,7 +2,7 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 	.run(function($ionicPlatform,$window,$interval,$timeout,$ionicHistory,$ionicPopup,$state,$rootScope){
 
 		$rootScope.appName = "Coluna VH" ;
-		$rootScope.appLogo = "data/images/header/COLUNA_DO_VH_NEW-01.jpg" ;
+		$rootScope.appLogo = "data/images/header/COLUNA_DO_VH_NEW-03.jpg" ;
 		$rootScope.appVersion = "1.0" ;
 		$rootScope.headerShrink = false ;
 
@@ -246,6 +246,7 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 
 	.state("coluna_vh.dashboard", {
 		url: "/dashboard",
+		cache:false,
 		views: {
 			"coluna_vh-side_menus" : {
 						templateUrl:"templates/coluna_vh-dashboard.html",

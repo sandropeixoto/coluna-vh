@@ -4,7 +4,7 @@
           "short_name": "Coluna VH",
           "start_url": "index.html",
           "display": "standalone",
-          "icons":[{"src": "data/images/header/COLUNA_DO_VH_NEW-01.jpg"}],
+          "icons":[{"src": "data/images/header/COLUNA_DO_VH_NEW-03.jpg"}],
           "prefer_related_applications": true,
           "related_applications": [
             {

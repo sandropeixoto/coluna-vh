@@ -6,6 +6,7 @@ angular.module("coluna_vh.controllers", [])
 .controller("indexCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
 	
 	$rootScope.headerExists = true;
+
 	// TODO: indexCtrl --|-- $rootScope.exitApp
 	$rootScope.exitApp = function(){
 		var confirmPopup = $ionicPopup.confirm({
@@ -37,13 +38,13 @@ angular.module("coluna_vh.controllers", [])
 	// TODO: indexCtrl --|-- $rootScope.showLanguageDialog
 	var modal_language = "";
 	modal_language += "<ion-modal-view>";
-	modal_language += "<ion-header-bar class=\"bar bar-header bar-dark\">";
+	modal_language += "<ion-header-bar class=\"bar bar-header bar-light\">";
 	modal_language += "<h1 class=\"title\">{{ 'Language' | translate }}</h1>";
 	modal_language += "</ion-header-bar>";
 	modal_language += "<ion-content class=\"padding\">";
 	modal_language += "<div class=\"list\">";
 	modal_language += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"language_option\" ng-value=\"'pt-br'\" ng-click=\"tryChangeLanguage('pt-br')\">Portuguese - Brazil</ion-radio>";
-	modal_language += "<button class=\"button button-full button-dark\" ng-click=\"closeLanguageDialog()\">{{ 'Close' | translate }}</button>";
+	modal_language += "<button class=\"button button-full button-light\" ng-click=\"closeLanguageDialog()\">{{ 'Close' | translate }}</button>";
 	modal_language += "</div>";
 	modal_language += "</ion-content>";
 	modal_language += "</ion-modal-view>";
@@ -103,7 +104,7 @@ angular.module("coluna_vh.controllers", [])
 	// TODO: indexCtrl --|-- $rootScope.showFontSizeDialog
 	var modal_fontsize = "";
 	modal_fontsize += "<ion-modal-view>";
-	modal_fontsize += "<ion-header-bar class=\"bar bar-header bar-dark\">";
+	modal_fontsize += "<ion-header-bar class=\"bar bar-header bar-light\">";
 	modal_fontsize += "<h1 class=\"title\">{{ 'Font Size' | translate }}</h1>";
 	modal_fontsize += "</ion-header-bar>";
 	modal_fontsize += "<ion-content class=\"padding\">";
@@ -111,7 +112,7 @@ angular.module("coluna_vh.controllers", [])
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'small'\" ng-click=\"tryChangeFontSize('small');\">{{ 'Small' | translate }}</ion-radio>";
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'normal'\" ng-click=\"tryChangeFontSize('normal');\">{{ 'Normal' | translate }}</ion-radio>";
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'large'\" ng-click=\"tryChangeFontSize('large');\">{{ 'Large' | translate }}</ion-radio>";
-	modal_fontsize += "<button class=\"button button-full button-dark\" ng-click=\"closeFontSizeDialog()\">{{ 'Close' | translate }}</button>";
+	modal_fontsize += "<button class=\"button button-full button-light\" ng-click=\"closeFontSizeDialog()\">{{ 'Close' | translate }}</button>";
 	modal_fontsize += "</div>";
 	modal_fontsize += "</ion-content>";
 	modal_fontsize += "</ion-modal-view>";
@@ -361,26 +362,11 @@ angular.module("coluna_vh.controllers", [])
 	popover_template += "	</ion-header-bar>";
 	popover_template += "	<ion-content>";
 	popover_template += "		<ion-list>";
-	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"showLanguageDialog()\" >";
-	popover_template += "			{{ '' | translate }}";
-	popover_template += "			</a>";
-	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"showFontSizeDialog()\" >";
-	popover_template += "			{{ '' | translate }}";
-	popover_template += "			</a>";
 	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"openWebView('http://www.colunadovh.com.br/wp-admin/')\">";
 	popover_template += "			{{ 'Administrator' | translate }}";
 	popover_template += "			</a>";
-	popover_template += "			<a  class=\"item dark-ink\" ng-href=\"#/coluna_vh/faqs\" ng-click=\"popover.hide()\">";
-	popover_template += "			{{ 'FAQs' | translate }}";
-	popover_template += "			</a>";
 	popover_template += "			<a  class=\"item dark-ink\" ng-href=\"#/coluna_vh/about_us\" ng-click=\"popover.hide()\">";
 	popover_template += "			{{ 'Sobre' | translate }}";
-	popover_template += "			</a>";
-	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"clearCacheApp()\" >";
-	popover_template += "			{{ '' | translate }}";
-	popover_template += "			</a>";
-	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"exitApp()\">";
-	popover_template += "			{{ 'Sair' | translate }}";
 	popover_template += "			</a>";
 	popover_template += "		</ion-list>";
 	popover_template += "	</ion-content>";
@@ -1332,6 +1318,7 @@ $ionicConfig.backButton.text("");
 			}else{
 				try{
 					$scope.post_bookmark = JSON.parse(dbVirtual); 
+					$rootScope.item_in_virtual_table_post = $scope.post_bookmark.length;
 				}catch (e){
 					$scope.post_bookmark = []; 
 				}
@@ -1352,6 +1339,7 @@ $ionicConfig.backButton.text("");
 	});
 	// TODO: post_bookmarkCtrl --|-- $scope.clearDbVirtualPost
 	$scope.clearDbVirtualPost = function(){
+					$rootScope.item_in_virtual_table_post = 0;
 		localforage.setItem("post_bookmark",[]);
 		$timeout(function(){
 			$scope.loadDbVirtualPost();
@@ -1474,6 +1462,9 @@ $ionicConfig.backButton.text("");
 	};
 	// TODO: post_singlesCtrl --|-- $scope.addToVirtual(); //data single
 	$scope.addToDbVirtual = function(newItem){
+		if(typeof newItem.id === "undefined"){
+			return false;
+		}
 		var is_already_exist = false ;
 		// animation loading 
 		$ionicLoading.show();
@@ -1502,6 +1493,7 @@ $ionicConfig.backButton.text("");
 			localforage.setItem("post_bookmark",JSON.stringify(virtual_items));
 			$timeout(function(){
 				$ionicLoading.hide();
+				$rootScope.item_in_virtual_table_post = virtual_items.length;
 			},200);
 		}).catch(function(err){
 			virtual_items = [];
@@ -1509,6 +1501,7 @@ $ionicConfig.backButton.text("");
 			localforage.setItem("post_bookmark",JSON.stringify(virtual_items));
 			$timeout(function(){
 				$ionicLoading.hide();
+				$rootScope.item_in_virtual_table_post = virtual_items.length;
 			},200);
 		})
 	};
