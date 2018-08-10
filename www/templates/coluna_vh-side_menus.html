@@ -6,37 +6,64 @@
 				<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
 			</ion-nav-buttons>
 			<ion-nav-buttons side="right">
-				<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+				<button class="button button-icon button-clear ion-android-globe" id="menu-popover" ng-click="openURL('https://www.colunavh.com')"></button>
 			</ion-nav-buttons>
 		</ion-nav-bar>
 		<ion-nav-view name="fabButtonUp"></ion-nav-view>
 		<ion-nav-view animation="none" name="coluna_vh-side_menus"></ion-nav-view>
 	</ion-side-menu-content>
 	<ion-side-menu side="left">
-		<ion-header-bar class="text-center expanded light-bg">
+		<ion-header-bar class="text-center expanded energized-bg">
 			<img ng-src="{{ appLogo | trustUrl }}" class="avatar motion spin fade" />
-			<div class="menu-bottom"><span ng-bind-html="appName | strHTML"></span><br/></div>
 		</ion-header-bar>
-		<ion-content class="has-expanded-header light-bg positive-900">
+		<ion-content class="has-expanded-header energized-bg positive-900">
 			<ion-list class="list" >
 				<ion-item  class="menu-dashboard item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="coluna_vh.dashboard">
-					<i class="icon ion-ios-home"></i> {{ "Home" | translate }}
+					<i class="icon ion-ios-home"></i> {{ "Início" | translate }}
 				</ion-item>
-				<ion-item  class="menu-categories item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="coluna_vh.categories">
-					<i class="icon ion-social-buffer"></i> {{ "Categorias" | translate }}
+				<ion-item  class="menu-about_us item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="coluna_vh.about_us">
+					<i class="icon ion-help-buoy"></i> {{ "Sobre o VH" | translate }}
 				</ion-item>
-				<ion-item  class="menu-posts item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="coluna_vh.posts({categories:'-1'})">
-					<i class="icon ion-clipboard"></i> {{ "Postagens" | translate }}
+				<ion-item class="item item-divider text-left" >
+					{{ "Colunas" | translate }}
+			   	</ion-item>
+				   <ion-item  class="menu-posts item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="coluna_vh.posts({categories:'15'})">
+					<i class="icon ion-clipboard"></i> {{ "Coluna VH" | translate }}
 				</ion-item>
+				<ion-item  class="menu-posts item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="coluna_vh.posts({categories:'17'})">
+					<i class="icon ion-clipboard"></i> {{ "VH Entrevista" | translate }}
+				</ion-item>
+				<ion-item  class="menu-posts item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="coluna_vh.posts({categories:'16'})">
+					<i class="icon ion-clipboard"></i> {{ "VH no Mundo" | translate }}
+				</ion-item>
+
+				<ion-item class="item item-divider text-left" >
+					{{ "Conecte-se" | translate }}
+			   	</ion-item>
+			   	<ion-item  class="menu-rate_this_app item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ng-click="openURL('https://www.instagram.com/victorhrugo/')">
+					<i class="icon ion-android-playstore"></i> {{ "Instagram" | translate }}
+				</ion-item>
+				<ion-item  class="menu-rate_this_app item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ng-click="openURL('https://twitter.com/victorhrugo')">
+					<i class="icon ion-android-playstore"></i> {{ "Twitter" | translate }}
+				</ion-item>
+				<ion-item  class="menu-rate_this_app item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ng-click="openURL('market://details?id=com.imabuilder.nanonetwork.colunavh')">
+					<i class="icon ion-android-playstore"></i> {{ "Youtube" | translate }}
+				</ion-item>
+				<ion-item  class="menu-rate_this_app item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ng-click="openURL('https://www.colunavh.com')">
+					<i class="icon ion-android-playstore"></i> {{ "Ir para o site" | translate }}
+				</ion-item>
+
+
+				<ion-item class="item item-divider text-left" >
+					{{ "Mais" | translate }}
+			   	</ion-item>
 				<ion-item  class="menu-post_bookmark item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="coluna_vh.post_bookmark">
 					<i class="icon ion-android-favorite"></i> {{ "Favoritos" | translate }}
 				</ion-item>
 				<ion-item  class="menu-rate_this_app item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ng-click="openURL('market://details?id=com.imabuilder.nanonetwork.colunavh')">
 					<i class="icon ion-android-playstore"></i> {{ "Avalie este App" | translate }}
 				</ion-item>
-				<ion-item  class="menu-about_us item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="coluna_vh.about_us">
-					<i class="icon ion-help-buoy"></i> {{ "Sobre" | translate }}
-				</ion-item>
+
 			</ion-list>
 		</ion-content>
 	</ion-side-menu>

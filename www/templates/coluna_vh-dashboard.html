@@ -19,7 +19,7 @@
 
 
     
-<!-- code categories hero -->
+<!-- code categories hero 
 <a ng-href="#/coluna_vh/categories" class="tags-heroes-title light-bg dark">Categorias <i class="pull-right icon ion-chevron-right"></i></a>
 <div class="light-bg" ng-controller="categoriesCtrl">
 	<div class="tags-heroes-content list">
@@ -46,7 +46,7 @@
         
 	</div>
 </div>
-<!-- ./code categories hero -->
+ ./code categories hero -->
 
     
 
@@ -69,14 +69,18 @@
 <!-- code items -->
 <div class="intro-box list light-bg dark" ng-controller="postsCtrl" >
     <div class="list" ng-repeat="item in data_posts | limitTo: 5:0">
-        <div class="item item-colorful"  ng-bind-html="item.title.rendered | strHTML"></div>
+        <a href="#/coluna_vh/post_singles/{{item.id}}"><div class="item button energized-bg"  ng-bind-html="item.title.rendered | strHTML"></div></a>
         <div class="item item-text-wrap" ng-class="item.x_featured_media ? 'item-thumbnail-left' : ''">
-            <img alt="" class="full-image" ng-src="{{item.x_featured_media}}" ng-if="item.x_featured_media!=null" />
-            <span ng-bind-html="item.excerpt.rendered | limitTo:140 | strHTML "></span>
+			
+				<img alt="" class="full-image" ng-src="{{item.x_featured_media}}" ng-if="item.x_featured_media!=null" />
+				<a href="#/coluna_vh/post_singles/{{item.id}}">
+				<span ng-bind-html="item.excerpt.rendered | limitTo:140 | strHTML "></span></a>
+			</a>	
         </div>
-        <a class="item button button-clear colorful ink" href="#/coluna_vh/post_singles/{{item.id}}">leia mais</a>
+        <!-- <a class="item button button-clear colorful ink" href="#/coluna_vh/post_singles/{{item.id}}">leia mais</a> -->
     </div>
 </div>
+
 <!-- ./code items -->
 
 
