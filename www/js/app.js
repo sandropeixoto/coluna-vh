@@ -2,7 +2,7 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 	.run(function($ionicPlatform,$window,$interval,$timeout,$ionicHistory,$ionicPopup,$state,$rootScope){
 
 		$rootScope.appName = "Coluna VH" ;
-		$rootScope.appLogo = "data/images/header/COLUNA_DO_VH_NEW-03.jpg" ;
+		$rootScope.appLogo = "data/images/header/COLUNA_DO_VH_NEW-03.png" ;
 		$rootScope.appVersion = "1.0" ;
 		$rootScope.headerShrink = false ;
 
