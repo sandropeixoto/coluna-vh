@@ -1,15 +1,15 @@
 
         {
-          "name": "Coluna VH2 Lite",
-          "short_name": "Coluna VH2",
+          "name": "Coluna VH Lite",
+          "short_name": "Coluna VH",
           "start_url": "index.html",
           "display": "standalone",
-          "icons":[{"src": "data/images/avatar/pic0.jpg"}],
+          "icons":[{"src": "data/images/header/COLUNA_DO_VH_NEW-01.jpg"}],
           "prefer_related_applications": true,
           "related_applications": [
             {
               "platform": "play",
-              "id": "com.imabuilder.nano.colunavh2"
+              "id": "com.imabuilder.nanonetwork.colunavh"
             }
           ],
          "background_color": "#ffffff",

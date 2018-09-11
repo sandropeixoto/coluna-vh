@@ -241,7 +241,7 @@ ul.rating li i{color:#FFCC00}
 /** option page **/
 #page-about_us{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
 #page-categories{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
-#page-dashboard{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
+#page-dashboard{background: url("../data/images/background/transparent.png") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
 #page-faqs{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
 #page-post_bookmark{background: url("../data/images/background/transparent.png") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
 #page-posts{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
@@ -260,3 +260,18 @@ ul.rating li i{color:#FFCC00}
 /** page slide_tab_menu **/
 
 /** custom css **/
+/** create using css generator **/
+.menu-categories a.item-content,.menu-categories  {color:#333333 !important}
+.menu-categories .icon{color:#333333 !important}
+.menu-posts a.item-content,.menu-posts  {color:#333333 !important}
+.menu-posts .icon{color:#333333 !important}
+.menu-users a.item-content,.menu-users  {color:#333333 !important}
+.menu-users .icon{color:#333333 !important}
+.menu-post_bookmark a.item-content,.menu-post_bookmark  {color:#333333 !important}
+.menu-post_bookmark .icon{color:#333333 !important}
+.menu-rate_this_app a.item-content,.menu-rate_this_app  {color:#333333 !important}
+.menu-rate_this_app .icon{color:#333333 !important}
+.menu-faqs a.item-content,.menu-faqs  {color:#333333 !important}
+.menu-faqs .icon{color:#333333 !important}
+.menu-about_us a.item-content,.menu-about_us  {color:#333333 !important}
+.menu-about_us .icon{color:#333333 !important}

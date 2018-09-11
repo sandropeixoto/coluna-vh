@@ -1,4 +1,4 @@
-angular.module("coluna_vh2.services", [])
+angular.module("coluna_vh.services", [])
 // TODO: --|---- directive
 	
 	
@@ -216,7 +216,11 @@ angular.module("coluna_vh2.services", [])
 			function runApp(event)
 			{
 				var loc = $attrs.loc || "23,12312";
-				var urlSchema = "geo:" + loc ;
+				if (ionic.Platform.isIOS()){
+					var urlSchema = "maps://?q=" + loc ;
+				}else{
+					var urlSchema = "geo:" + loc ;
+				}
 				window.open(urlSchema,"_system","location=yes");
 			};
 		}

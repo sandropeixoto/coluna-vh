@@ -1,4 +1,4 @@
-angular.module("coluna_vh2.controllers", [])
+angular.module("coluna_vh.controllers", [])
 
 
 
@@ -38,13 +38,13 @@ angular.module("coluna_vh2.controllers", [])
 	// TODO: indexCtrl --|-- $rootScope.showLanguageDialog
 	var modal_language = "";
 	modal_language += "<ion-modal-view>";
-	modal_language += "<ion-header-bar class=\"bar bar-header bar-dark\">";
+	modal_language += "<ion-header-bar class=\"bar bar-header bar-energized\">";
 	modal_language += "<h1 class=\"title\">{{ 'Language' | translate }}</h1>";
 	modal_language += "</ion-header-bar>";
 	modal_language += "<ion-content class=\"padding\">";
 	modal_language += "<div class=\"list\">";
 	modal_language += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"language_option\" ng-value=\"'pt-br'\" ng-click=\"tryChangeLanguage('pt-br')\">Portuguese - Brazil</ion-radio>";
-	modal_language += "<button class=\"button button-full button-dark\" ng-click=\"closeLanguageDialog()\">{{ 'Close' | translate }}</button>";
+	modal_language += "<button class=\"button button-full button-energized\" ng-click=\"closeLanguageDialog()\">{{ 'Close' | translate }}</button>";
 	modal_language += "</div>";
 	modal_language += "</ion-content>";
 	modal_language += "</ion-modal-view>";
@@ -104,7 +104,7 @@ angular.module("coluna_vh2.controllers", [])
 	// TODO: indexCtrl --|-- $rootScope.showFontSizeDialog
 	var modal_fontsize = "";
 	modal_fontsize += "<ion-modal-view>";
-	modal_fontsize += "<ion-header-bar class=\"bar bar-header bar-dark\">";
+	modal_fontsize += "<ion-header-bar class=\"bar bar-header bar-energized\">";
 	modal_fontsize += "<h1 class=\"title\">{{ 'Font Size' | translate }}</h1>";
 	modal_fontsize += "</ion-header-bar>";
 	modal_fontsize += "<ion-content class=\"padding\">";
@@ -112,7 +112,7 @@ angular.module("coluna_vh2.controllers", [])
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'small'\" ng-click=\"tryChangeFontSize('small');\">{{ 'Small' | translate }}</ion-radio>";
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'normal'\" ng-click=\"tryChangeFontSize('normal');\">{{ 'Normal' | translate }}</ion-radio>";
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'large'\" ng-click=\"tryChangeFontSize('large');\">{{ 'Large' | translate }}</ion-radio>";
-	modal_fontsize += "<button class=\"button button-full button-dark\" ng-click=\"closeFontSizeDialog()\">{{ 'Close' | translate }}</button>";
+	modal_fontsize += "<button class=\"button button-full button-energized\" ng-click=\"closeFontSizeDialog()\">{{ 'Close' | translate }}</button>";
 	modal_fontsize += "</div>";
 	modal_fontsize += "</ion-content>";
 	modal_fontsize += "</ion-modal-view>";
@@ -172,9 +172,9 @@ angular.module("coluna_vh2.controllers", [])
 					for(var e = 0; e < keys.length ; e++) {
 						localforage.setItem(keys[e],[]);
 					}
-					$state.go("coluna_vh2.dashboard");
+					$state.go("coluna_vh.dashboard");
 				}).catch(function(err) {
-					$state.go("coluna_vh2.dashboard");
+					$state.go("coluna_vh.dashboard");
 				});
 			}
 			$rootScope.closeMenuPopover();
@@ -358,30 +358,30 @@ angular.module("coluna_vh2.controllers", [])
 	var popover_template = "";
 	popover_template += "<ion-popover-view class=\"fit\">";
 	popover_template += "	<ion-header-bar>";
-	popover_template += "		<h1  class=\"title\">Bantuan</h1>";
+	popover_template += "		<h1  class=\"title\">Ajuda</h1>";
 	popover_template += "	</ion-header-bar>";
 	popover_template += "	<ion-content>";
 	popover_template += "		<ion-list>";
 	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"showLanguageDialog()\" >";
-	popover_template += "			{{ 'Bahasa' | translate }}";
+	popover_template += "			{{ '' | translate }}";
 	popover_template += "			</a>";
 	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"showFontSizeDialog()\" >";
-	popover_template += "			{{ 'Ukuran Tulisan' | translate }}";
+	popover_template += "			{{ '' | translate }}";
 	popover_template += "			</a>";
 	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"openWebView('https://colunavh.com/wp-admin/')\">";
 	popover_template += "			{{ 'Administrator' | translate }}";
 	popover_template += "			</a>";
-	popover_template += "			<a  class=\"item dark-ink\" ng-href=\"#/coluna_vh2/faqs\" ng-click=\"popover.hide()\">";
-	popover_template += "			{{ 'Tanya Jawab' | translate }}";
+	popover_template += "			<a  class=\"item dark-ink\" ng-href=\"#/coluna_vh/faqs\" ng-click=\"popover.hide()\">";
+	popover_template += "			{{ 'FAQs' | translate }}";
 	popover_template += "			</a>";
-	popover_template += "			<a  class=\"item dark-ink\" ng-href=\"#/coluna_vh2/about_us\" ng-click=\"popover.hide()\">";
-	popover_template += "			{{ 'Tentang Kami' | translate }}";
+	popover_template += "			<a  class=\"item dark-ink\" ng-href=\"#/coluna_vh/about_us\" ng-click=\"popover.hide()\">";
+	popover_template += "			{{ 'Sobre' | translate }}";
 	popover_template += "			</a>";
 	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"clearCacheApp()\" >";
-	popover_template += "			{{ 'Bersihkan Cache' | translate }}";
+	popover_template += "			{{ '' | translate }}";
 	popover_template += "			</a>";
 	popover_template += "			<a  class=\"item dark-ink\" ng-click=\"exitApp()\">";
-	popover_template += "			{{ 'Exit' | translate }}";
+	popover_template += "			{{ 'Sair' | translate }}";
 	popover_template += "			</a>";
 	popover_template += "		</ion-list>";
 	popover_template += "	</ion-content>";
@@ -626,7 +626,7 @@ $ionicConfig.backButton.text("");
 			scope: $scope,
 			buttons: [
 				{text:"Cancel",onTap: function(e){
-					$state.go("coluna_vh2.dashboard");
+					$state.go("coluna_vh.dashboard");
 				}},
 				{text:"<strong>Save</strong>",type:"button-positive",onTap:function(e){
 						return $scope.form;
@@ -657,7 +657,7 @@ $ionicConfig.backButton.text("");
 	};
 	var targetQuery = ""; //default param
 	var raplaceWithQuery = "";
-	//fix url {{ 'Kategori' | translate }}
+	//fix url {{ 'Categorias' | translate }}
 	targetQuery = "per_page=100"; //default param
 	raplaceWithQuery = "per_page=100";
 	
@@ -1057,6 +1057,77 @@ $ionicConfig.backButton.text("");
 	controller_by_user();
 })
 
+// TODO: languageCtrl --|-- 
+.controller("languageCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
+	
+	$rootScope.headerExists = true;
+	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
+	$rootScope.grid64 = parseInt($rootScope.ionWidth / 64) ;
+	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
+	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
+	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
+	$rootScope.last_edit = "menu" ;
+	$scope.$on("$ionicView.afterEnter", function (){
+		var page_id = $state.current.name ;
+		$rootScope.page_id = page_id.replace(".","-") ;
+	});
+	if($rootScope.headerShrink == true){
+		$scope.$on("$ionicView.enter", function(){
+			$scope.scrollTop();
+		});
+	};
+	// TODO: languageCtrl --|-- $scope.scrollTop
+	$rootScope.scrollTop = function(){
+		$timeout(function(){
+			$ionicScrollDelegate.$getByHandle("top").scrollTop();
+		},100);
+	};
+	// TODO: languageCtrl --|-- $scope.toggleGroup
+	$scope.toggleGroup = function(group) {
+		if ($scope.isGroupShown(group)) {
+			$scope.shownGroup = null;
+		} else {
+			$scope.shownGroup = group;
+		}
+	};
+	
+	$scope.isGroupShown = function(group) {
+		return $scope.shownGroup === group;
+	};
+	
+	// TODO: languageCtrl --|-- $scope.redirect
+	// redirect
+	$scope.redirect = function($url){
+		$window.location.href = $url;
+	};
+	
+	// Set Motion
+	$timeout(function(){
+		ionicMaterialMotion.slideUp({
+			selector: ".slide-up"
+		});
+	}, 300);
+	// code 
+
+	// TODO: languageCtrl --|-- controller_by_user
+	// controller by user 
+	function controller_by_user(){
+		try {
+			
+$ionicConfig.backButton.text("");			
+		} catch(e){
+			console.log("%cerror: %cPage: `language` and field: `Custom Controller`","color:blue;font-size:18px","color:red;font-size:18px");
+			console.dir(e);
+		}
+	}
+	$scope.rating = {};
+	$scope.rating.max = 5;
+	
+	// animation ink (ionic-material)
+	ionicMaterialInk.displayEffect();
+	controller_by_user();
+})
+
 // TODO: menu_oneCtrl --|-- 
 .controller("menu_oneCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
 	
@@ -1117,6 +1188,77 @@ $ionicConfig.backButton.text("");
 $ionicConfig.backButton.text("");			
 		} catch(e){
 			console.log("%cerror: %cPage: `menu_one` and field: `Custom Controller`","color:blue;font-size:18px","color:red;font-size:18px");
+			console.dir(e);
+		}
+	}
+	$scope.rating = {};
+	$scope.rating.max = 5;
+	
+	// animation ink (ionic-material)
+	ionicMaterialInk.displayEffect();
+	controller_by_user();
+})
+
+// TODO: menu_twoCtrl --|-- 
+.controller("menu_twoCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
+	
+	$rootScope.headerExists = true;
+	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
+	$rootScope.grid64 = parseInt($rootScope.ionWidth / 64) ;
+	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
+	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
+	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
+	$rootScope.last_edit = "menu" ;
+	$scope.$on("$ionicView.afterEnter", function (){
+		var page_id = $state.current.name ;
+		$rootScope.page_id = page_id.replace(".","-") ;
+	});
+	if($rootScope.headerShrink == true){
+		$scope.$on("$ionicView.enter", function(){
+			$scope.scrollTop();
+		});
+	};
+	// TODO: menu_twoCtrl --|-- $scope.scrollTop
+	$rootScope.scrollTop = function(){
+		$timeout(function(){
+			$ionicScrollDelegate.$getByHandle("top").scrollTop();
+		},100);
+	};
+	// TODO: menu_twoCtrl --|-- $scope.toggleGroup
+	$scope.toggleGroup = function(group) {
+		if ($scope.isGroupShown(group)) {
+			$scope.shownGroup = null;
+		} else {
+			$scope.shownGroup = group;
+		}
+	};
+	
+	$scope.isGroupShown = function(group) {
+		return $scope.shownGroup === group;
+	};
+	
+	// TODO: menu_twoCtrl --|-- $scope.redirect
+	// redirect
+	$scope.redirect = function($url){
+		$window.location.href = $url;
+	};
+	
+	// Set Motion
+	$timeout(function(){
+		ionicMaterialMotion.slideUp({
+			selector: ".slide-up"
+		});
+	}, 300);
+	// code 
+
+	// TODO: menu_twoCtrl --|-- controller_by_user
+	// controller by user 
+	function controller_by_user(){
+		try {
+			
+$ionicConfig.backButton.text("");			
+		} catch(e){
+			console.log("%cerror: %cPage: `menu_two` and field: `Custom Controller`","color:blue;font-size:18px","color:red;font-size:18px");
 			console.dir(e);
 		}
 	}
@@ -1314,7 +1456,7 @@ $ionicConfig.backButton.text("");
 			scope: $scope,
 			buttons: [
 				{text:"Cancel",onTap: function(e){
-					$state.go("coluna_vh2.dashboard");
+					$state.go("coluna_vh.dashboard");
 				}},
 				{text:"<strong>Save</strong>",type:"button-positive",onTap:function(e){
 						return $scope.form;
@@ -1588,7 +1730,7 @@ $ionicConfig.backButton.text("");
 			scope: $scope,
 			buttons: [
 				{text:"Cancel",onTap: function(e){
-					$state.go("coluna_vh2.dashboard");
+					$state.go("coluna_vh.dashboard");
 				}},
 				{text:"<strong>Save</strong>",type:"button-positive",onTap:function(e){
 						return $scope.form;
@@ -2089,7 +2231,7 @@ $ionicConfig.backButton.text("");
 			scope: $scope,
 			buttons: [
 				{text:"Cancel",onTap: function(e){
-					$state.go("coluna_vh2.dashboard");
+					$state.go("coluna_vh.dashboard");
 				}},
 				{text:"<strong>Save</strong>",type:"button-positive",onTap:function(e){
 						return $scope.form;

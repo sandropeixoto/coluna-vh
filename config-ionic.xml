@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.imabuilder.nano.colunavh2" version="1.0.180911" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-	<name>Coluna VH2</name>
-	<description>Coluna VH2</description>
-	<author email="contato@colunavh.com" href="http://www.colunavh.com">Sandro</author>
+<widget id="com.imabuilder.nanonetwork.colunavh" version="1.0.180912" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+	<name>Coluna VH</name>
+	<description>Coluna VH</description>
+	<author email="contato@sandropeixoto.com.br" href="http://www.colunadovh.com.br">Sandro Peixoto</author>
 	<content src="index.html" />
 	<!-- Network Request Whitelist -->
 	<access origin="*" />
@@ -40,6 +40,9 @@
 	<allow-intent href="geo:*" />
 	<allow-intent href="google.navigation:*" />
 	<allow-intent href="google.streetview:*" />
+	<allow-intent href="maps:*" />
+	<allow-intent href="map:*" />
+	<allow-intent href="googlemap:*" />
 	<allow-intent href="whatsapp:*" />
 	<allow-intent href="line:*" />
 	<allow-intent href="twitter:*" />
@@ -61,7 +64,7 @@
 	<preference name="DisallowOverscroll" value="true"/>
 	<preference name="SplashScreenDelay" value="500"/>
 	<preference name="FadeSplashScreenDuration" value="0"/>
-	<preference name="android-minSdkVersion" value="16"/>
+	<preference name="android-minSdkVersion" value="26"/>
 	<preference name="BackupWebStorage" value="none"/>
 	<preference name="SplashScreen" value="screen"/>
 	<preference name="StatusBarOverlaysWebView" value="false" />
@@ -88,6 +91,7 @@
 	<!-- ./default -->
 	<plugin name="cordova-plugin-dialogs" />
 	<plugin name="cordova-plugin-inappbrowser" />
+	<plugin name="cordova-plugin-network-information" />
 	<platform name="android">
 		<!-- splash and icon for build using ionic/cordova -->
 		<icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
