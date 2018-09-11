@@ -1,8 +1,8 @@
-angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","ion-datetime-picker","ionic.rating","utf8-base64","angular-md5","chart.js","pascalprecht.translate","tmh.dynamicLocale","coluna_vh.controllers", "coluna_vh.services"])
+angular.module("coluna_vh2", ["ngCordova","ionic","ionMdInput","ionic-material","ion-datetime-picker","ionic.rating","utf8-base64","angular-md5","chart.js","pascalprecht.translate","tmh.dynamicLocale","coluna_vh2.controllers", "coluna_vh2.services"])
 	.run(function($ionicPlatform,$window,$interval,$timeout,$ionicHistory,$ionicPopup,$state,$rootScope){
 
-		$rootScope.appName = "Coluna VH" ;
-		$rootScope.appLogo = "data/images/header/COLUNA_DO_VH_NEW-03.png" ;
+		$rootScope.appName = "Coluna VH2" ;
+		$rootScope.appLogo = "data/images/avatar/pic0.jpg" ;
 		$rootScope.appVersion = "1.0" ;
 		$rootScope.headerShrink = false ;
 
@@ -10,9 +10,9 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 
 			localforage.config({
 				driver : [localforage.WEBSQL,localforage.INDEXEDDB,localforage.LOCALSTORAGE],
-				name : "coluna_vh",
-				storeName : "coluna_vh",
-				description : "The offline datastore for Coluna VH app"
+				name : "coluna_vh2",
+				storeName : "coluna_vh2",
+				description : "The offline datastore for Coluna VH2 app"
 			});
 
 			if(window.cordova){
@@ -31,24 +31,13 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 				StatusBar.styleDefault();
 			}
 
-			//required: cordova plugin add cordova-plugin-network-information --save
-			$interval(function(){
-				if ( typeof navigator == "object" && typeof navigator.connection != "undefined"){
-					var networkState = navigator.connection.type;
-					$rootScope.is_online = true ;
-					if (networkState == "none") {
-						$rootScope.is_online = false ;
-						$window.location = "retry.html";
-					}
-				}
-			}, 5000);
 
 		});
 		$ionicPlatform.registerBackButtonAction(function (e){
 			if($ionicHistory.backView()){
 				$ionicHistory.goBack();
 			}else{
-				$state.go("coluna_vh.dashboard");
+				$state.go("coluna_vh2.dashboard");
 			}
 			e.preventDefault();
 			return false;
@@ -197,18 +186,18 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		console.log("%cerror: %cdomain whitelist","color:blue;font-size:16px;","color:red;font-size:16px;");
 	}
 	$stateProvider
-	.state("coluna_vh",{
-		url: "/coluna_vh",
+	.state("coluna_vh2",{
+		url: "/coluna_vh2",
 			abstract: true,
-			templateUrl: "templates/coluna_vh-side_menus.html",
+			templateUrl: "templates/coluna_vh2-side_menus.html",
 			controller: "side_menusCtrl",
 	})
 
-	.state("coluna_vh.about_us", {
+	.state("coluna_vh2.about_us", {
 		url: "/about_us",
 		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-about_us.html",
+			"coluna_vh2-side_menus" : {
+						templateUrl:"templates/coluna_vh2-about_us.html",
 						controller: "about_usCtrl"
 					},
 			"fabButtonUp" : {
@@ -217,11 +206,11 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	.state("coluna_vh.bookmarks", {
+	.state("coluna_vh2.bookmarks", {
 		url: "/bookmarks",
 		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-bookmarks.html",
+			"coluna_vh2-side_menus" : {
+						templateUrl:"templates/coluna_vh2-bookmarks.html",
 						controller: "bookmarksCtrl"
 					},
 			"fabButtonUp" : {
@@ -230,12 +219,12 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	.state("coluna_vh.categories", {
+	.state("coluna_vh2.categories", {
 		url: "/categories",
 		cache:true,
 		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-categories.html",
+			"coluna_vh2-side_menus" : {
+						templateUrl:"templates/coluna_vh2-categories.html",
 						controller: "categoriesCtrl"
 					},
 			"fabButtonUp" : {
@@ -244,12 +233,11 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	.state("coluna_vh.dashboard", {
+	.state("coluna_vh2.dashboard", {
 		url: "/dashboard",
-		cache:false,
 		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-dashboard.html",
+			"coluna_vh2-side_menus" : {
+						templateUrl:"templates/coluna_vh2-dashboard.html",
 						controller: "dashboardCtrl"
 					},
 			"fabButtonUp" : {
@@ -258,11 +246,11 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	.state("coluna_vh.faqs", {
+	.state("coluna_vh2.faqs", {
 		url: "/faqs",
 		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-faqs.html",
+			"coluna_vh2-side_menus" : {
+						templateUrl:"templates/coluna_vh2-faqs.html",
 						controller: "faqsCtrl"
 					},
 			"fabButtonUp" : {
@@ -271,24 +259,11 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	.state("coluna_vh.language", {
-		url: "/language",
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-language.html",
-						controller: "languageCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("coluna_vh.menu_one", {
+	.state("coluna_vh2.menu_one", {
 		url: "/menu_one",
 		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-menu_one.html",
+			"coluna_vh2-side_menus" : {
+						templateUrl:"templates/coluna_vh2-menu_one.html",
 						controller: "menu_oneCtrl"
 					},
 			"fabButtonUp" : {
@@ -297,25 +272,12 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	.state("coluna_vh.menu_two", {
-		url: "/menu_two",
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-menu_two.html",
-						controller: "menu_twoCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("coluna_vh.post_bookmark", {
+	.state("coluna_vh2.post_bookmark", {
 		url: "/post_bookmark",
 		cache:false,
 		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-post_bookmark.html",
+			"coluna_vh2-side_menus" : {
+						templateUrl:"templates/coluna_vh2-post_bookmark.html",
 						controller: "post_bookmarkCtrl"
 					},
 			"fabButtonUp" : {
@@ -324,12 +286,12 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	.state("coluna_vh.post_singles", {
+	.state("coluna_vh2.post_singles", {
 		url: "/post_singles/:id",
 		cache:true,
 		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-post_singles.html",
+			"coluna_vh2-side_menus" : {
+						templateUrl:"templates/coluna_vh2-post_singles.html",
 						controller: "post_singlesCtrl"
 					},
 			"fabButtonUp" : {
@@ -343,12 +305,12 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	.state("coluna_vh.posts", {
+	.state("coluna_vh2.posts", {
 		url: "/posts/:categories",
 		cache:true,
 		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-posts.html",
+			"coluna_vh2-side_menus" : {
+						templateUrl:"templates/coluna_vh2-posts.html",
 						controller: "postsCtrl"
 					},
 			"fabButtonUp" : {
@@ -362,25 +324,12 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	.state("coluna_vh.slide_tab_menu", {
-		url: "/slide_tab_menu",
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-slide_tab_menu.html",
-						controller: "slide_tab_menuCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("coluna_vh.users", {
+	.state("coluna_vh2.users", {
 		url: "/users",
 		cache:false,
 		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-users.html",
+			"coluna_vh2-side_menus" : {
+						templateUrl:"templates/coluna_vh2-users.html",
 						controller: "usersCtrl"
 					},
 			"fabButtonUp" : {
@@ -389,5 +338,5 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	$urlRouterProvider.otherwise("/coluna_vh/dashboard");
+	$urlRouterProvider.otherwise("/coluna_vh2/dashboard");
 });

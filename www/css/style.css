@@ -97,7 +97,7 @@ h4 small, .h4 small { font-size:14px}
 .item-options .icon:before {background: transparent;}
 .item-radio input:checked + .radio-content .item-content {background:transparent ;}
 .item-radio .radio-icon {color:#387EF5}
-.bar-header-inset,.bar-header-inset input{background:#000;margin-top:2px;}
+.bar-header-inset,.bar-header-inset input{background:#eee;margin-top:2px;}
 /** Template for Data Listing **/
 .item-thumbnail-3 {overflow: hidden;}
 .item-thumbnail-3 .item{border:0;height: 80px !important;min-height: 80px !important;}
@@ -235,17 +235,17 @@ ul.rating li i{color:#FFCC00}
 /** header **/
 
 /** menu **/
-.menu .bar.bar-header.expanded{background-image: url("../");background-size: 120%;background-position:0%;transition: all .5s ease-in-out;}
+.menu .bar.bar-header.expanded{background-image: url("../data/images/header/header0.jpg");background-size: 120%;background-position:0%;transition: all .5s ease-in-out;}
 .menu .bar.bar-header.expanded img{margin:auto;left:16px;right:16px;}
 
 /** option page **/
-#page-about_us{background: url("../data/images/background/bg0.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
-#page-categories{background: url("../data/images/background/bg0.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
-#page-dashboard{background: url("../data/images/background/bg0.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
-#page-faqs{background: url("../data/images/background/bg0.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
+#page-about_us{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
+#page-categories{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
+#page-dashboard{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
+#page-faqs{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
 #page-post_bookmark{background: url("../data/images/background/transparent.png") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
-#page-posts{background: url("../data/images/background/bg0.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
-#page-users{background: url("../data/images/background/bg0.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
+#page-posts{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
+#page-users{background: url("../data/images/background/bg7.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
 /** page about_us **/
 .about-us-box{background-color: rgba(255, 255, 255, 0.5);}
 .about-us-box .item{border-color: rgba(255, 255, 255, 0.5);border-left:0;border-right:0;}
@@ -260,18 +260,3 @@ ul.rating li i{color:#FFCC00}
 /** page slide_tab_menu **/
 
 /** custom css **/
-/** create using css generator **/
-.menu-categories a.item-content,.menu-categories  {color:#333333 !important}
-.menu-categories .icon{color:#333333 !important}
-.menu-posts a.item-content,.menu-posts  {color:#333333 !important}
-.menu-posts .icon{color:#333333 !important}
-.menu-users a.item-content,.menu-users  {color:#333333 !important}
-.menu-users .icon{color:#333333 !important}
-.menu-post_bookmark a.item-content,.menu-post_bookmark  {color:#333333 !important}
-.menu-post_bookmark .icon{color:#333333 !important}
-.menu-rate_this_app a.item-content,.menu-rate_this_app  {color:#333333 !important}
-.menu-rate_this_app .icon{color:#333333 !important}
-.menu-faqs a.item-content,.menu-faqs  {color:#333333 !important}
-.menu-faqs .icon{color:#333333 !important}
-.menu-about_us a.item-content,.menu-about_us  {color:#333333 !important}
-.menu-about_us .icon{color:#333333 !important}

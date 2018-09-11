@@ -494,6 +494,77 @@ $ionicConfig.backButton.text("");
 	controller_by_user();
 })
 
+// TODO: bookmarksCtrl --|-- 
+.controller("bookmarksCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
+	
+	$rootScope.headerExists = true;
+	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
+	$rootScope.grid64 = parseInt($rootScope.ionWidth / 64) ;
+	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
+	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
+	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
+	$rootScope.last_edit = "menu" ;
+	$scope.$on("$ionicView.afterEnter", function (){
+		var page_id = $state.current.name ;
+		$rootScope.page_id = page_id.replace(".","-") ;
+	});
+	if($rootScope.headerShrink == true){
+		$scope.$on("$ionicView.enter", function(){
+			$scope.scrollTop();
+		});
+	};
+	// TODO: bookmarksCtrl --|-- $scope.scrollTop
+	$rootScope.scrollTop = function(){
+		$timeout(function(){
+			$ionicScrollDelegate.$getByHandle("top").scrollTop();
+		},100);
+	};
+	// TODO: bookmarksCtrl --|-- $scope.toggleGroup
+	$scope.toggleGroup = function(group) {
+		if ($scope.isGroupShown(group)) {
+			$scope.shownGroup = null;
+		} else {
+			$scope.shownGroup = group;
+		}
+	};
+	
+	$scope.isGroupShown = function(group) {
+		return $scope.shownGroup === group;
+	};
+	
+	// TODO: bookmarksCtrl --|-- $scope.redirect
+	// redirect
+	$scope.redirect = function($url){
+		$window.location.href = $url;
+	};
+	
+	// Set Motion
+	$timeout(function(){
+		ionicMaterialMotion.slideUp({
+			selector: ".slide-up"
+		});
+	}, 300);
+	// code 
+
+	// TODO: bookmarksCtrl --|-- controller_by_user
+	// controller by user 
+	function controller_by_user(){
+		try {
+			
+$ionicConfig.backButton.text("");			
+		} catch(e){
+			console.log("%cerror: %cPage: `bookmarks` and field: `Custom Controller`","color:blue;font-size:18px","color:red;font-size:18px");
+			console.dir(e);
+		}
+	}
+	$scope.rating = {};
+	$scope.rating.max = 5;
+	
+	// animation ink (ionic-material)
+	ionicMaterialInk.displayEffect();
+	controller_by_user();
+})
+
 // TODO: categoriesCtrl --|-- 
 .controller("categoriesCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
 	

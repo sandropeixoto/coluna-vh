@@ -1,4 +1,4 @@
-angular.module("coluna_vh.services", [])
+angular.module("coluna_vh2.services", [])
 // TODO: --|---- directive
 	
 	
