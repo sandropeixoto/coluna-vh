@@ -2,7 +2,7 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 	.run(function($ionicPlatform,$window,$interval,$timeout,$ionicHistory,$ionicPopup,$state,$rootScope){
 
 		$rootScope.appName = "Coluna VH" ;
-		$rootScope.appLogo = "data/images/header/COLUNA_DO_VH_NEW-01.jpg" ;
+		$rootScope.appLogo = "data/images/header/COLUNA_DO_VH_NEW-03.png" ;
 		$rootScope.appVersion = "1.0" ;
 		$rootScope.headerShrink = false ;
 
@@ -253,12 +253,7 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 						controller: "dashboardCtrl"
 					},
 			"fabButtonUp" : {
-						template: '<button id="fab-up-button" ng-click="scrollTop()" class="button button-fab button-fab-bottom-right button-energized-900 spin"><i class="icon ion-arrow-up-a"></i></button>',
-						controller: function ($timeout) {
-							$timeout(function () {
-								document.getElementById("fab-up-button").classList.toggle("on");
-							}, 900);
-						}
+						template: '',
 					},
 		}
 	})
