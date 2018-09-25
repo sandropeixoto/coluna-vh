@@ -2,7 +2,7 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 	.run(function($ionicPlatform,$window,$interval,$timeout,$ionicHistory,$ionicPopup,$state,$rootScope){
 
 		$rootScope.appName = "Coluna VH" ;
-		$rootScope.appLogo = "data/images/header/COLUNA_DO_VH_NEW-03.png" ;
+		$rootScope.appLogo = "data/images/header/logo.png" ;
 		$rootScope.appVersion = "1.0" ;
 		$rootScope.headerShrink = false ;
 
@@ -31,17 +31,6 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 				StatusBar.styleDefault();
 			}
 
-			//required: cordova plugin add cordova-plugin-network-information --save
-			$interval(function(){
-				if ( typeof navigator == "object" && typeof navigator.connection != "undefined"){
-					var networkState = navigator.connection.type;
-					$rootScope.is_online = true ;
-					if (networkState == "none") {
-						$rootScope.is_online = false ;
-						$window.location = "retry.html";
-					}
-				}
-			}, 5000);
 
 		});
 		$ionicPlatform.registerBackButtonAction(function (e){
@@ -204,79 +193,12 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 			controller: "side_menusCtrl",
 	})
 
-	.state("coluna_vh.about_us", {
-		url: "/about_us",
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-about_us.html",
-						controller: "about_usCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("coluna_vh.bookmarks", {
-		url: "/bookmarks",
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-bookmarks.html",
-						controller: "bookmarksCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("coluna_vh.categories", {
-		url: "/categories",
-		cache:true,
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-categories.html",
-						controller: "categoriesCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("coluna_vh.dashboard", {
-		url: "/dashboard",
-		cache:false,
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-dashboard.html",
-						controller: "dashboardCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
 	.state("coluna_vh.faqs", {
 		url: "/faqs",
 		views: {
 			"coluna_vh-side_menus" : {
 						templateUrl:"templates/coluna_vh-faqs.html",
 						controller: "faqsCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("coluna_vh.language", {
-		url: "/language",
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-language.html",
-						controller: "languageCtrl"
 					},
 			"fabButtonUp" : {
 						template: '',
@@ -310,84 +232,9 @@ angular.module("coluna_vh", ["ngCordova","ionic","ionMdInput","ionic-material","
 		}
 	})
 
-	.state("coluna_vh.post_bookmark", {
-		url: "/post_bookmark",
-		cache:false,
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-post_bookmark.html",
-						controller: "post_bookmarkCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
 
-	.state("coluna_vh.post_singles", {
-		url: "/post_singles/:id",
-		cache:true,
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-post_singles.html",
-						controller: "post_singlesCtrl"
-					},
-			"fabButtonUp" : {
-						template: '<button id="fab-up-button" ng-click="scrollTop()" class="button button-fab button-fab-bottom-right button-energized-900 spin"><i class="icon ion-arrow-up-a"></i></button>',
-						controller: function ($timeout) {
-							$timeout(function () {
-								document.getElementById("fab-up-button").classList.toggle("on");
-							}, 900);
-						}
-					},
-		}
-	})
+// router by user
 
-	.state("coluna_vh.posts", {
-		url: "/posts/:categories",
-		cache:true,
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-posts.html",
-						controller: "postsCtrl"
-					},
-			"fabButtonUp" : {
-						template: '<button id="fab-up-button" ng-click="scrollTop()" class="button button-fab button-fab-bottom-right button-energized-900 spin"><i class="icon ion-arrow-up-a"></i></button>',
-						controller: function ($timeout) {
-							$timeout(function () {
-								document.getElementById("fab-up-button").classList.toggle("on");
-							}, 900);
-						}
-					},
-		}
-	})
-
-	.state("coluna_vh.slide_tab_menu", {
-		url: "/slide_tab_menu",
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-slide_tab_menu.html",
-						controller: "slide_tab_menuCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("coluna_vh.users", {
-		url: "/users",
-		cache:false,
-		views: {
-			"coluna_vh-side_menus" : {
-						templateUrl:"templates/coluna_vh-users.html",
-						controller: "usersCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
 
 	$urlRouterProvider.otherwise("/coluna_vh/dashboard");
 });

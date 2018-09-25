@@ -4,23 +4,34 @@
 		
 	<div style="width: 100%;height:100%;">
 		<ion-slide-box class="ion-slide-tabs" slide-tabs-scrollable="false" show-pager="false" ion-slide-tabs>
-			<ion-slide ion-slide-tab-label="Ajuda" >
+			<ion-slide ion-slide-tab-label="Dashboard" >
 					<ion-content scroll="false" class="slidingTabContent">
 						<div class="list">
+							<a class="item item-icon-left" ng-href="#/coluna_vh/menu_one" >
+								<i class="icon ion-android-favorite" ></i>
+								<h2>{{ "Menu One" | translate }}</h2>
+								<span class="item-note pull-left">Example Menu 1</span>
+							</a>
+							<a class="item item-icon-left" ng-href="#/coluna_vh/menu_two" >
+								<i class="icon ion-android-favorite" ></i>
+								<h2>{{ "Menu Two" | translate }}</h2>
+								<span class="item-note pull-left">Example Menu 2</span>
+							</a>
+						</div>
+					</ion-content>
+			</ion-slide>
+			<ion-slide ion-slide-tab-label="Help" >
+					<ion-content scroll="false" class="slidingTabContent">
+						<div class="list">
+							<a class="item item-icon-left" ng-href="#/coluna_vh/faqs" >
+								<i class="icon ion-android-chat" ></i>
+								<h2>{{ "Faqs" | translate }}</h2>
+								<span class="item-note pull-left">FAQs and Tutorial</span>
+							</a>
 							<a class="item item-icon-left" ng-click="openURL('market://details?id=com.imabuilder.nanonetwork.colunavh')" >
 								<i class="icon ion-android-playstore" ></i>
-								<h2>{{ "Avalie este App" | translate }}</h2>
+								<h2>{{ "Rate This App" | translate }}</h2>
 								<span class="item-note pull-left">Taking a moment to rate this app?</span>
-							</a>
-							<a class="item item-icon-left" ng-href="#/coluna_vh/faqs" >
-								<i class="icon ion-ios-help" ></i>
-								<h2>{{ "FAQs" | translate }}</h2>
-								<span class="item-note pull-left"></span>
-							</a>
-							<a class="item item-icon-left" ng-href="#/coluna_vh/about_us" >
-								<i class="icon ion-help-buoy" ></i>
-								<h2>{{ "Sobre" | translate }}</h2>
-								<span class="item-note pull-left"></span>
 							</a>
 						</div>
 					</ion-content>

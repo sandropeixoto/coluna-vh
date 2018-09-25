@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.imabuilder.nanonetwork.colunavh" version="1.0.180912" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.imabuilder.nanonetwork.colunavh" version="1.0.180926" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>Coluna VH</name>
-	<description>Coluna VH</description>
-	<author email="contato@sandropeixoto.com.br" href="http://www.colunadovh.com.br">Sandro Peixoto</author>
+	<description>App Victor Hugo</description>
+	<author email="contato@sandropeixoto.com.br" href="https://www.colunavh.com">Sandro de Souza Peixoto Sandro Peixoto</author>
 	<content src="index.html" />
 	<!-- Network Request Whitelist -->
 	<access origin="*" />
@@ -91,7 +91,6 @@
 	<!-- ./default -->
 	<plugin name="cordova-plugin-dialogs" />
 	<plugin name="cordova-plugin-inappbrowser" />
-	<plugin name="cordova-plugin-network-information" />
 	<platform name="android">
 		<icon qualifier="ldpi" src="www/res/icon/android/ldpi-icon.png" />
 		<icon qualifier="mdpi" src="www/res/icon/android/mdpi-icon.png" />
