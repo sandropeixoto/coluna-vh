@@ -89,4 +89,64 @@ MD "platforms\android\res\drawable-port-xxxhdpi"
 XCOPY /Y /S "resources\android\splash\drawable-port-xxxhdpi-screen.png" "platforms\android\res\drawable-port-xxxhdpi\*"
 REN "platforms\android\res\drawable-port-xxxhdpi\drawable-port-xxxhdpi-screen.png" "screen.png"
 DEL "platforms\android\res\drawable-port-xxxhdpi\drawable-port-xxxhdpi-screen.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-land-hdpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-land-hdpi.png" "screen.png"
+DEL "www\res\screen\android\splash-land-hdpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-land-ldpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-land-ldpi.png" "screen.png"
+DEL "www\res\screen\android\splash-land-ldpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-land-mdpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-land-mdpi.png" "screen.png"
+DEL "www\res\screen\android\splash-land-mdpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-land-xhdpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-land-xhdpi.png" "screen.png"
+DEL "www\res\screen\android\splash-land-xhdpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-land-xxhdpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-land-xxhdpi.png" "screen.png"
+DEL "www\res\screen\android\splash-land-xxhdpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-land-xxxhdpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-land-xxxhdpi.png" "screen.png"
+DEL "www\res\screen\android\splash-land-xxxhdpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-port-hdpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-port-hdpi.png" "screen.png"
+DEL "www\res\screen\android\splash-port-hdpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-port-ldpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-port-ldpi.png" "screen.png"
+DEL "www\res\screen\android\splash-port-ldpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-port-mdpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-port-mdpi.png" "screen.png"
+DEL "www\res\screen\android\splash-port-mdpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-port-xhdpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-port-xhdpi.png" "screen.png"
+DEL "www\res\screen\android\splash-port-xhdpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-port-xxhdpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-port-xxhdpi.png" "screen.png"
+DEL "www\res\screen\android\splash-port-xxhdpi.png"
+
+MD "www\res\screen\android"
+XCOPY /Y /S "www\res\screen\android\splash-port-xxxhdpi.png" "www\res\screen\android\*"
+REN "www\res\screen\android\splash-port-xxxhdpi.png" "screen.png"
+DEL "www\res\screen\android\splash-port-xxxhdpi.png"
 PAUSE
