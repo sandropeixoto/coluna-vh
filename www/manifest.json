@@ -2,7 +2,7 @@
         {
           "name": "Coluna VH Lite",
           "short_name": "Coluna VH",
-          "start_url": "index.html",
+          "start_url": "https://colunavh.com",
           "display": "standalone",
           "icons":[{"src": "data/images/header/logo.png"}],
           "prefer_related_applications": true,
