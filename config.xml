@@ -2,7 +2,7 @@
 <widget id="com.imabuilder.nanonetwork.colunavh" version="1.0.180926" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>Coluna VH</name>
 	<description>App Victor Hugo</description>
-	<author email="contato@sandropeixoto.com.br" href="https://www.colunavh.com">Sandro Peixoto</author>
+	<author email="contato@sandropeixoto.com.br" href="https://www.colunavh.com">Sandro de Souza Peixoto Sandro Peixoto</author>
 	<content src="index.html" />
 	<!-- Network Request Whitelist -->
 	<access origin="*" />
@@ -190,6 +190,4 @@
     </platform>
     
 -->
-
-	<preference name="phonegap-version" value="cli-8.0.0" />
 </widget>
